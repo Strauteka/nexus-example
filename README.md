@@ -9,7 +9,7 @@
 ## Grab pass from Docker container
 `docker exec -it nexus sh` -> `cat nexus-data/admin.password`
 
-#Maven 
+# Maven 
 
 ## Create maven repo
 Create `maven2(hosted)` repo with name `nexus-maven-example`
@@ -45,11 +45,12 @@ In project folder execute:
 `docker build -f ./docker/app.Dockerfile -t localhost:6000/nexus-docker-example:latest .`
 
 ## Login     
-`docker login http://localhost:6000/repository/nexus-docker-example/`
+`docker login http://localhost:6000/repository/nexus-docker-example/`  
+if login fails, add `Docker Bearer Token Realm` in Security -> Realms
 
 ## Push   
 `docker push localhost:6000/nexus-docker-example:latest`
 
 ## Test
-`docker rmi localhost:6000/nexus-docker-example:latest`
-`docker pull localhost:6000/nexus-docker-example`
+`docker rmi localhost:6000/nexus-docker-example:latest`  
+`docker pull localhost:6000/nexus-docker-example`  
